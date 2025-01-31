@@ -10,6 +10,7 @@
         "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,json}\" --cache",
         "lint": "next lint",
         "lint:fix": "next lint --fix",
+        "prepare": "husky",
         "serve": "serve out",
         "start": "next start",
         "typecheck": "tsc --noEmit"
