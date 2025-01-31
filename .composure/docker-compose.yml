@@ -2,12 +2,15 @@ services:
     app:
         build:
             context: ../
-            target: runner
-            dockerfile: ./.composure/Dockerfile
+            dockerfile: ./Dockerfile # target: runner
         ports:
             - '3000:3000'
         networks:
             - mynet
+        dns_opt:
+            - edns0
+            - trust-ad
+            - ndots:1
     nginx:
         image: nginx:latest
         ports:

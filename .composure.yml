@@ -1,0 +1,25 @@
+services:
+    app:
+        build:
+            # type: formula
+            # formula: nextjs
+            # baseImage: node:18-alpine
+
+            type: dockerfile
+            context: ./
+            dockerfile: ./.composure/Dockerfile
+        http_port: 3000
+
+environments:
+    development:
+        trigger: on-push
+        branch: main
+        services: app
+        environment_variables:
+            - NODE_ENV=development
+    production:
+        trigger: manual
+        branch: main
+        services: app
+        environment_variables:
+            - NODE_ENV=production
