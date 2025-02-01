@@ -17,7 +17,7 @@ export default function Page() {
                     initial={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.5 }}
                 >
-                    TypeScript Tailwind CSS Template
+                    TypeScript Tailwind CSS Template 2
                 </motion.h1>
 
                 <motion.p
