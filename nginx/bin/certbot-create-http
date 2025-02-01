@@ -8,7 +8,7 @@ if [ -z "$DOMAIN" ]; then
 fi
 
 # create the nginx config file
-cp nginx/conf.d/domain.template /etc/nginx/conf.d/$DOMAIN.conf
+cp /etc/nginx/conf.d/domain.template /etc/nginx/conf.d/$DOMAIN.conf
 sed -i "s/{domain}/$DOMAIN/g" /etc/nginx/conf.d/$DOMAIN.conf
 
 certbot \
