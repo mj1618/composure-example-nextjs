@@ -4,7 +4,7 @@ import { Terminal } from '@/components/terminal';
 import { Button } from '@/components/ui/button';
 import { commands } from '@/constants/commands';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code, Github } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
                     initial={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.5 }}
                 >
-                    TypeScript Tailwind CSS Template 2
+                    TypeScript Tailwind CSS Template
                 </motion.h1>
 
                 <motion.p
@@ -39,7 +39,7 @@ export default function Page() {
                     </Link>
 
                     <Button className="group">
-                        Get Started 2
+                        Get Started
                         <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
                     </Button>
                 </div>
