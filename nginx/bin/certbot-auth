@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mkdir -p /opt/certbot-auth/$CERTBOT_DOMAIN/.well-known/acme-challenge/
+touch /opt/certbot-auth/$CERTBOT_DOMAIN/.well-known/acme-challenge/$CERTBOT_TOKEN
+echo $CERTBOT_VALIDATION > /opt/certbot-auth/$CERTBOT_DOMAIN/.well-known/acme-challenge/$CERTBOT_TOKEN
+chmod 664 /opt/certbot-auth/$CERTBOT_DOMAIN/.well-known/acme-challenge/$CERTBOT_TOKEN
+

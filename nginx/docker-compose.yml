@@ -1,0 +1,17 @@
+services:
+    nginx:
+        build:
+            context: ../
+            dockerfile: ./Dockerfile
+        container_name: composure-nginx
+        ports:
+            - '8080:80'
+        volumes:
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+            - ./certbot-auth/:/opt/certbot-auth/
+        networks:
+            - mynet
+
+networks:
+    mynet:
+        driver: bridge

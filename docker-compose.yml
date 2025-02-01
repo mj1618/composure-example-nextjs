@@ -11,12 +11,18 @@ services:
             - edns0
             - trust-ad
             - ndots:1
+
     nginx:
-        image: nginx:latest
+        build:
+            context: ./nginx
+            dockerfile: ./Dockerfile
+        container_name: composure-nginx
         ports:
             - '80:80'
         volumes:
-            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+            - ./certbot-auth/:/opt/certbot-auth/
         networks:
             - mynet
 

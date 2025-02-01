@@ -35,3 +35,8 @@ git-status.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+nginx/certboat-auth/*
+!nginx/certboat-auth/.gitkeep
+nginx/conf.d/*
+!nginx/conf.d/default.conf

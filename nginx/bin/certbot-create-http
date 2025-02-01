@@ -1,0 +1,21 @@
+#!/bin/bash
+DOMAIN=$1
+mkdir -p /opt/certbot-auth/$DOMAIN
+
+echo "server {
+  listen 80;
+  server_name $DOMAIN;
+  root /opt/certbot-auth/$DOMAIN;
+}
+" | tee /etc/nginx/conf.d/$DOMAIN.conf
+
+certbot certonly \
+  --manual \
+  --authenticator manual \
+  --manual-auth-hook ./bin/certbot-auth \
+  --manual-cleanup-hook ./bin/certbot-auth-cleanup \
+  --preferred-challenges=http \
+  --non-interactive \
+  --agree-tos \
+  -m matthew.stephen.james@gmail.com \
+  -d $1
