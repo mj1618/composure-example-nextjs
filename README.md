@@ -59,3 +59,4 @@ Feel free to use this template for your Next.js projects!
 ---
 
 This project was created with ❤️ by [ファース](https://github.com/pyyupsk)
+
